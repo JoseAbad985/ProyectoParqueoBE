@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="ProyectoParqueo:EJB exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProyectoParqueo_EJB_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ProyectoParqueo/ejb/EJB" />
+      <element id="javaee-facet-classes" facet="ProyectoParqueo/ejb/EJB" />
+    </root>
+  </artifact>
+</component>
