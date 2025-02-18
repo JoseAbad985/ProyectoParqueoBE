@@ -12,7 +12,8 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOrigins(
                         "http://localhost:4200",
                         "https://proyectoparqueo-9b413.web.app",
-                        "https://proyectoparqueo-9b413.firebaseapp.com"
+                        "https://proyectoparqueo-9b413.firebaseapp.com",
+                        "https://proyectoparqueobe.onrender.com"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD")
                 .allowedHeaders("*")
