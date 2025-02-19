@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.List;
+import java.time.ZoneId;
 
 @Service
 public class ParqueoConfiguracionesService {
@@ -41,10 +42,11 @@ public class ParqueoConfiguracionesService {
                 return false;
             }
 
-            LocalTime currentTime = LocalTime.now();
+            // Get current time in UTC-5 (Ecuador timezone)
+            LocalTime currentTime = LocalTime.now(ZoneId.of("America/Guayaquil"));
             LocalTime oneHourBeforeClosing = closingTime.minusHours(1);
 
-            logger.debug("Current time: {}", currentTime);
+            logger.debug("Current time (Ecuador): {}", currentTime);
             logger.debug("One hour before closing: {}", oneHourBeforeClosing);
             logger.debug("Closing time: {}", closingTime);
 
