@@ -42,7 +42,7 @@ public class ParqueoConfiguracionesService {
                 return false;
             }
 
-            // Get current time in UTC-5 (Ecuador timezone)
+
             LocalTime currentTime = LocalTime.now(ZoneId.of("America/Guayaquil"));
             LocalTime oneHourBeforeClosing = closingTime.minusHours(1);
 

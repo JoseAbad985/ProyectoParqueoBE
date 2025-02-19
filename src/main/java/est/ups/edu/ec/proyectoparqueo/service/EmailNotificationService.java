@@ -46,12 +46,12 @@ public class EmailNotificationService {
                 logger.debug("Notifications already sent for this closing time");
                 return;
             }
-
-            List<String> userEmails = userRepository.findAllActiveUserEmails();
-            logger.info("Found {} active users to notify", userEmails.size());
+            //19-2-2025=5:23pm
+            List<String> userEmails = userRepository.findEmailsOfUsersWithActiveContracts();
+            logger.info("Found {} users with active contracts to notify", userEmails.size());
 
             if (userEmails.isEmpty()) {
-                logger.info("No active users to notify");
+                logger.info("No users with active contracts to notify");
                 return;
             }
 
@@ -85,7 +85,7 @@ public class EmailNotificationService {
 
                 if (allSuccessful) {
                     notificationSent = true;
-                    logger.info("Successfully sent closing notifications to all users");
+                    logger.info("Succcesfully sent notification to users with active contracts");
                 }
             } catch (IOException e) {
                 logger.error("Failed to send closing notifications: {}", e.getMessage(), e);
